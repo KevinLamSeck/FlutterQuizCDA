@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_quizz_questions/quiz_app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,16 +11,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Scaffold(
-          body: Center(
-        child: Text('Hello World'),
-      )),
-    );
+    return const QuizApp();
   }
 }
