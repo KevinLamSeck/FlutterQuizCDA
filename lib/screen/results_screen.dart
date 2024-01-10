@@ -62,7 +62,28 @@ class ResulstsScreen extends StatelessWidget {
             const SizedBox(height: 16),
             QuestionsSummary(summaryData: summaryData),
             const SizedBox(height: 16),
-            TextButton(onPressed: onRestardQuiz, child: const Text('Restart')),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 2 / 3,
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.deepPurple,
+                  textStyle: const TextStyle(
+                    fontSize: 20,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                onPressed: onRestardQuiz,
+                child: const Text(
+                  'Recommencer',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
