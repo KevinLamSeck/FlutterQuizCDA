@@ -6,7 +6,6 @@ class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key});
 
   void onPressed() {
-    print('Start pressed');
     startQuiz();
   }
 
