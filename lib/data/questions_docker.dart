@@ -7,7 +7,6 @@ const questionsDocker = [
       "Un outil pour la gestion des bases de données",
       "Un système de virtualisation matérielle",
       "Un orchestrateur de conteneurs",
-      "Une plateforme de conteneurisation",
       "Un langage de programmation",
       "Un gestionnaire de fichiers",
       "Un éditeur de texte",
@@ -21,7 +20,6 @@ const questionsDocker = [
       "Les VMs utilisent moins de ressources système",
       "Les conteneurs Docker sont plus sécurisés",
       "Les VMs sont plus faciles à orchestrer",
-      "Les conteneurs Docker partagent le noyau du système d'exploitation hôte",
       "Les VMs sont plus portables",
       "Les conteneurs Docker sont plus lourds en termes de ressources",
       "Les VMs sont plus isolées des autres VMs",
@@ -33,7 +31,6 @@ const questionsDocker = [
     text:
         "Quelle commande Docker est utilisée pour construire une image Docker à partir d'un fichier Dockerfile?",
     answers: [
-      "docker build",
       "docker run",
       "docker create",
       "docker pull",
@@ -50,7 +47,6 @@ const questionsDocker = [
       "docker create",
       "docker start",
       "docker build",
-      "docker run",
       "docker exec",
       "docker stop",
       "docker compose",
@@ -61,7 +57,6 @@ const questionsDocker = [
     text:
         "Quelle commande Docker est utilisée pour lister tous les conteneurs Docker en cours d'exécution sur votre système?",
     answers: [
-      "docker ps",
       "docker ls",
       "docker containers",
       "docker status",
@@ -75,7 +70,6 @@ const questionsDocker = [
     text:
         "Quelle est la commande Docker pour supprimer un conteneur Docker en cours d'exécution?",
     answers: [
-      "docker rm",
       "docker remove",
       "docker delete",
       "docker stop",
@@ -92,7 +86,6 @@ const questionsDocker = [
       "docker enter",
       "docker attach",
       "docker connect",
-      "docker exec",
       "docker start",
       "docker run",
       "docker in",
@@ -103,7 +96,6 @@ const questionsDocker = [
     text:
         "Quelle est la commande Docker pour créer un réseau Docker personnalisé?",
     answers: [
-      "docker network create",
       "docker create network",
       "docker build network",
       "docker custom network",
@@ -123,7 +115,6 @@ const questionsDocker = [
       "docker inspect",
       "docker history",
       "docker events",
-      "docker logs",
     ],
     correctAnswer: "docker logs",
   ),
@@ -131,7 +122,6 @@ const questionsDocker = [
     text: "Quelle est la principale utilisation de Docker Compose?",
     answers: [
       "Créer des images Docker",
-      "Orchestrer des conteneurs sur plusieurs hôtes",
       "Automatiser le déploiement de conteneurs",
       "Créer des conteneurs Docker",
       "Créer des réseaux Docker",
@@ -148,7 +138,6 @@ const questionsDocker = [
       "Une image Docker est un fichier de configuration",
       "Un conteneur Docker est une version de l'image Docker",
       "Une image Docker est une instantanée en lecture seule",
-      "Un conteneur Docker est un package exécutable de l'image Docker",
       "Une image Docker est un conteneur Docker en cours d'exécution",
       "Un conteneur Docker est une image Docker en cours d'édition",
     ],

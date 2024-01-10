@@ -7,7 +7,6 @@ const questionsSQL = [
       "Un langage de programmation orienté objet",
       "Un langage de script utilisé pour créer des sites web",
       "Un langage de requête structurée pour la gestion de bases de données",
-      "Un langage de programmation pour la création d'interfaces utilisateur",
       "Un langage de programmation pour l'intelligence artificielle",
       "Un langage de programmation pour la réalité virtuelle",
       "Un langage de programmation pour les jeux vidéo",
@@ -19,7 +18,6 @@ const questionsSQL = [
     text: "Quelle est la principale utilisation de SQL?",
     answers: [
       "La création de pages web",
-      "La gestion de bases de données",
       "La programmation d'interfaces utilisateur",
       "L'analyse de données statistiques",
       "La création de jeux vidéo",
@@ -32,7 +30,6 @@ const questionsSQL = [
     text:
         "Quelle commande SQL est utilisée pour récupérer des données d'une table?",
     answers: [
-      "SELECT",
       "INSERT",
       "UPDATE",
       "DELETE",
@@ -47,7 +44,6 @@ const questionsSQL = [
         "Quelle commande SQL est utilisée pour insérer des données dans une table?",
     answers: [
       "SELECT",
-      "INSERT",
       "UPDATE",
       "DELETE",
       "CREATE",
@@ -62,7 +58,6 @@ const questionsSQL = [
     answers: [
       "ORDER BY",
       "GROUP BY",
-      "WHERE",
       "FROM",
       "HAVING",
       "JOIN",
@@ -76,7 +71,6 @@ const questionsSQL = [
     answers: [
       "SELECT",
       "INSERT",
-      "UPDATE",
       "DELETE",
       "CREATE",
       "ALTER",
@@ -91,7 +85,6 @@ const questionsSQL = [
       "SELECT",
       "INSERT",
       "UPDATE",
-      "DELETE",
       "CREATE",
       "ALTER",
       "DROP",
@@ -105,7 +98,6 @@ const questionsSQL = [
       "EXTRACT",
       "GROUP BY",
       "UNION",
-      "JOIN",
       "LEFT JOIN",
       "INNER JOIN",
       "OUTER JOIN",
@@ -121,7 +113,6 @@ const questionsSQL = [
       "SELECT DISTINCT",
       "SELECT JOIN",
       "SELECT TABLES",
-      "SELECT FROM",
       "SELECT MULTIPLE",
     ],
     correctAnswer: "SELECT FROM",
@@ -132,7 +123,6 @@ const questionsSQL = [
     answers: [
       "WHERE",
       "GROUP BY",
-      "HAVING",
       "SELECT",
       "ORDER BY",
       "JOIN",
@@ -145,7 +135,6 @@ const questionsSQL = [
         "Quelle jointure SQL renvoie toutes les lignes de la table de gauche et les correspondances de la table de droite?",
     answers: [
       "INNER JOIN",
-      "LEFT JOIN",
       "RIGHT JOIN",
       "FULL JOIN",
       "SELF JOIN",
@@ -160,7 +149,6 @@ const questionsSQL = [
     answers: [
       "WHERE",
       "GROUP BY",
-      "ORDER BY",
       "HAVING",
       "SELECT",
       "JOIN",
@@ -174,7 +162,6 @@ const questionsSQL = [
     answers: [
       "SELECT INTO",
       "SELECT ALL",
-      "SELECT DISTINCT",
       "SELECT UNIQUE",
       "SELECT VALUES",
       "SELECT FROM",
@@ -187,7 +174,6 @@ const questionsSQL = [
     answers: [
       "Une clause pour trier les résultats par ordre croissant",
       "Une clause pour filtrer les résultats en fonction d'une condition",
-      "Une clause pour regrouper des lignes en fonction d'une colonne",
       "Une clause pour renommer des colonnes dans le résultat",
       "Une clause pour supprimer des données de la table",
       "Une clause pour insérer de nouvelles données",
@@ -201,7 +187,6 @@ const questionsSQL = [
     answers: [
       "Elle renvoie toutes les lignes de la table",
       "Elle renvoie uniquement les lignes avec des valeurs nulles",
-      "Elle renvoie uniquement les lignes uniques sans doublons",
       "Elle renvoie uniquement les lignes qui satisfont une condition",
       "Elle renvoie toutes les colonnes de la table",
       "Elle renvoie uniquement les colonnes spécifiées dans la clause",
@@ -215,7 +200,6 @@ const questionsSQL = [
     answers: [
       "GROUP BY",
       "SELECT UNIQUE",
-      "FILTER",
       "INNER JOIN",
       "UNION",
       "CROSS JOIN",
@@ -232,7 +216,6 @@ const questionsSQL = [
       "FILTER",
       "INNER JOIN",
       "UNION",
-      "CROSS JOIN",
       "RIGHT JOIN",
     ],
     correctAnswer: "CROSS JOIN",
@@ -247,7 +230,6 @@ const questionsSQL = [
       "INNER JOIN",
       "UNION",
       "CROSS JOIN",
-      "RIGHT JOIN",
     ],
     correctAnswer: "RIGHT JOIN",
   ),
@@ -258,7 +240,6 @@ const questionsSQL = [
       "GROUP BY",
       "SELECT UNIQUE",
       "FILTER",
-      "INNER JOIN",
       "UNION",
       "CROSS JOIN",
       "RIGHT JOIN",
@@ -273,7 +254,6 @@ const questionsSQL = [
       "SELECT UNIQUE",
       "FILTER",
       "INNER JOIN",
-      "UNION",
       "CROSS JOIN",
       "RIGHT JOIN",
     ],

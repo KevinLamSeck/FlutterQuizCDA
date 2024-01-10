@@ -5,7 +5,6 @@ const questionsKeywords = [
     text:
         "Dans la programmation orientée objet, que signifie le mot clé 'private' pour une variable de classe?",
     answers: [
-      "La variable est accessible uniquement depuis la classe contenant la variable",
       "La variable est accessible depuis n'importe quelle classe",
       "La variable est accessible uniquement depuis les sous-classes",
       "La variable est accessible uniquement depuis d'autres classes dans le même package",
@@ -22,7 +21,6 @@ const questionsKeywords = [
     answers: [
       "La variable est accessible uniquement depuis la classe contenant la variable",
       "La variable est accessible depuis n'importe quelle classe",
-      "La variable est accessible uniquement depuis les sous-classes",
       "La variable est accessible uniquement depuis d'autres classes dans le même package",
       "La variable est accessible uniquement depuis des classes dans un autre package",
       "La variable est globale et peut être modifiée par n'importe quelle classe",
@@ -34,7 +32,6 @@ const questionsKeywords = [
   Question(
     text: "Quel est le rôle du mot clé 'static' pour une variable de classe?",
     answers: [
-      "La variable est accessible uniquement depuis la classe contenant la variable",
       "La variable est accessible depuis n'importe quelle classe",
       "La variable est accessible uniquement depuis les sous-classes",
       "La variable est accessible uniquement depuis d'autres classes dans le même package",
@@ -49,7 +46,6 @@ const questionsKeywords = [
     text:
         "Quelle est la signification du mot clé 'final' pour une variable en programmation?",
     answers: [
-      "La variable ne peut pas être modifiée après sa déclaration",
       "La variable est toujours initialisée avec une valeur nulle",
       "La variable ne peut pas être utilisée dans une classe",
       "La variable est accessible uniquement depuis les sous-classes",
@@ -64,7 +60,6 @@ const questionsKeywords = [
     answers: [
       "Il déclare une variable",
       "Il définit une boucle",
-      "Il effectue une conditionnelle",
       "Il définit une fonction",
       "Il définit une classe",
       "Il déclare une constante",
@@ -76,7 +71,6 @@ const questionsKeywords = [
     text: "En programmation, que signifie le mot clé 'for'?",
     answers: [
       "Il déclare une variable",
-      "Il définit une boucle",
       "Il effectue une conditionnelle",
       "Il définit une fonction",
       "Il définit une classe",
@@ -92,7 +86,6 @@ const questionsKeywords = [
       "Il définit une boucle",
       "Il effectue une conditionnelle",
       "Il définit une fonction",
-      "Il renvoie une valeur d'une fonction",
       "Il déclare une constante",
       "Il gère les exceptions",
     ],
@@ -106,7 +99,6 @@ const questionsKeywords = [
       "Il effectue une conditionnelle",
       "Il définit une fonction",
       "Il définit une classe",
-      "Il gère les exceptions",
       "Il renvoie une valeur d'une fonction",
     ],
     correctAnswer: "Il gère les exceptions",
