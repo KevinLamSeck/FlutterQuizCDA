@@ -1,16 +1,24 @@
-# flutter_quizz_questions
+# Flutter Quiz CDA
 
-A new Flutter project.
+## Introduction
 
-## Getting Started
+Flutter Quiz CDA is a Flutter-based application designed to help users better retain certain definitions in the field of programming. This interactive application provides a fun approach to learning and revising key programming concepts.
 
-This project is a starting point for a Flutter application.
+## Table of Contents
 
-A few resources to get you started if this is your first Flutter project:
+- [Installation](#installation)
+- [Contributors](#contributors)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+
+(Describe how to install your application, for example:)
+
+```bash
+flutter pub get
+flutter run
+```
+
+## Contributors
+
+@KevinLamSeck
