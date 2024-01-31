@@ -85,7 +85,7 @@ class _QuizAppState extends State<QuizApp> {
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 221, 198, 232),
+            color: Color.fromARGB(255, 18, 18, 18),
           ),
           child: SafeArea(
             minimum: const EdgeInsets.all(16.0),
