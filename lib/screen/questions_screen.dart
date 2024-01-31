@@ -56,6 +56,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
             textAlign: TextAlign.center,
           ),

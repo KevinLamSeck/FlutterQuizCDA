@@ -24,10 +24,11 @@ class StartScreen extends StatelessWidget {
         ),
         // Text
         const Text(
-          'Enhance your knowledges for the fucking CDA!',
+          'Enhance your knowledge for basic interview questions!',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
           textAlign: TextAlign.center,
         ),
