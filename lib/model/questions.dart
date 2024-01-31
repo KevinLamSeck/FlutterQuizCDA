@@ -1,15 +1,16 @@
+import 'dart:math';
+
 import 'package:flutter_quizz_questions/model/question.dart';
 
 import '../data/questions_data.dart';
 
 class Questions {
-  /// Returns a shuffled list of questions.
+  final List<Question> _selectedQuestions = [];
+
+  /// Returns a list of random questions.
   ///
-  /// This method retrieves a list of questions and shuffles them randomly.
-  /// The questions are of type [Question].
-  ///
-  /// Returns:
-  ///   - A shuffled list of questions.
+  /// The [numberOfQuestions] parameter specifies the number of questions to be included in the list.
+  /// By default, it is set to 10.
   List<Question> getRandomQuestions({int numberOfQuestions = 10}) {
     List<Question> mergedList = [
       ...questionsReact,
@@ -19,7 +20,27 @@ class Questions {
       ...questionsDocker,
       ...questionsArchitecture
     ];
-    mergedList.shuffle();
-    return mergedList.sublist(0, numberOfQuestions);
+
+    var random = Random();
+    List<Question> result = [];
+
+    while (result.length < numberOfQuestions && mergedList.isNotEmpty) {
+      var index = random.nextInt(mergedList.length);
+      var selectedQuestion = mergedList[index];
+
+      if (!_selectedQuestions.contains(selectedQuestion)) {
+        _selectedQuestions.add(selectedQuestion);
+        result.add(selectedQuestion);
+      }
+
+      mergedList.removeAt(index);
+    }
+
+    if (result.length < numberOfQuestions) {
+      _selectedQuestions.clear();
+      return getRandomQuestions(numberOfQuestions: numberOfQuestions);
+    }
+
+    return result;
   }
 }
