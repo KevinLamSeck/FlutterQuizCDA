@@ -18,11 +18,14 @@ class Questions {
       ...questionsJavaScript,
       ...questionsKeywords,
       ...questionsDocker,
-      ...questionsArchitecture
+      ...questionsArchitecture,
+      ...questionsSQL,
     ];
 
     var random = Random();
     List<Question> result = [];
+
+    mergedList.shuffle();
 
     while (result.length < numberOfQuestions && mergedList.isNotEmpty) {
       var index = random.nextInt(mergedList.length);

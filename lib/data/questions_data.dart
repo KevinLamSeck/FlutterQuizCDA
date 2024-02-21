@@ -1,5 +1,6 @@
 export 'questions_architecture.dart';
 export 'questions_docker.dart';
+export 'questions_git.dart';
 export 'questions_javascript.dart';
 export 'questions_keywords.dart';
 export 'questions_oop.dart';

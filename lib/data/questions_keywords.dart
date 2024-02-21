@@ -103,4 +103,126 @@ const questionsKeywords = [
     ],
     correctAnswer: "Il gère les exceptions",
   ),
+  Question(
+      text: "Que signifie le mot-clé 'namespace' en programmation?",
+      answers: [
+        "Définir un espace de nommage",
+        "Déclarer une variable",
+        "Définir une classe",
+        "Définir une boucle",
+        "Effectuer une conditionnelle",
+        "Renvoyer une valeur d'une fonction"
+      ],
+      correctAnswer: "Définir un espace de nommage"),
+  Question(
+      text: "Quel est le rôle du mot-clé 'default' dans un switch?",
+      answers: [
+        "Gérer le cas par défaut",
+        "Déclarer une variable",
+        "Définir une classe",
+        "Définir une boucle",
+        "Effectuer une conditionnelle",
+        "Renvoyer une valeur d'une fonction"
+      ],
+      correctAnswer: "Gérer le cas par défaut"),
+  Question(
+      text: "Que signifie le mot-clé 'enum' en programmation?",
+      answers: [
+        "Déclarer une énumération",
+        "Déclarer une variable",
+        "Définir une classe",
+        "Définir une boucle",
+        "Effectuer une conditionnelle",
+        "Gérer les exceptions"
+      ],
+      correctAnswer: "Déclarer une énumération"),
+  Question(
+      text: "Comment le mot-clé 'break' est utilisé en programmation?",
+      answers: [
+        "Sortir d'une boucle",
+        "Déclarer une variable",
+        "Définir une classe",
+        "Effectuer une conditionnelle",
+        "Définir une fonction",
+        "Gérer les exceptions"
+      ],
+      correctAnswer: "Sortir d'une boucle"),
+  Question(
+      text: "Quel est le rôle du mot-clé 'abstract' en programmation?",
+      answers: [
+        "Définir une méthode ou classe abstraite",
+        "Déclarer une variable",
+        "Définir une boucle",
+        "Effectuer une conditionnelle",
+        "Définir une fonction",
+        "Gérer les exceptions"
+      ],
+      correctAnswer: "Définir une méthode ou classe abstraite"),
+  Question(
+      text: "Que signifie le mot-clé 'this' en programmation orientée objet?",
+      answers: [
+        "Référence à l'instance courante de la classe",
+        "Déclare une variable",
+        "Définit une boucle",
+        "Effectue une condition",
+        "Définit une fonction",
+        "Gère les exceptions"
+      ],
+      correctAnswer: "Référence à l'instance courante de la classe"),
+  Question(
+      text: "Comment le mot-clé 'case' est-il utilisé dans un switch?",
+      answers: [
+        "Pour gérer les cas d'une instruction switch",
+        "Déclare une variable",
+        "Définit une classe",
+        "Définit une boucle",
+        "Effectue une condition",
+        "Renvoie une valeur"
+      ],
+      correctAnswer: "Pour gérer les cas d'une instruction switch"),
+  Question(
+      text: "Que signifie le mot-clé 'catch' en programmation?",
+      answers: [
+        "Gère les exceptions levées dans le bloc try",
+        "Déclare une variable",
+        "Définit une classe",
+        "Définit une boucle",
+        "Effectue une condition",
+        "Renvoie une valeur"
+      ],
+      correctAnswer: "Gère les exceptions levées dans le bloc try"),
+  Question(
+      text: "A quoi sert le mot-clé 'goto' en programmation?",
+      answers: [
+        "Permet de sauter directement à une étiquette du code",
+        "Déclare une variable",
+        "Définit une classe",
+        "Définit une boucle",
+        "Effectue une condition",
+        "Renvoie une valeur"
+      ],
+      correctAnswer: "Permet de sauter directement à une étiquette du code"),
+  Question(
+      text:
+          "Quel est le rôle du mot-clé 'new' en programmation orientée objet?",
+      answers: [
+        " crée une instance d'une classe",
+        "Déclare une variable",
+        "Définit une classe",
+        "Définit une boucle",
+        "Effectue une condition",
+        "Gère les exceptions"
+      ],
+      correctAnswer: " crée une instance d'une classe"),
+  Question(
+      text: "Que signifie le mot-clé 'null' en programmation?",
+      answers: [
+        "Valeur nulle ou inexistante",
+        "Déclare une variable",
+        "Définit une classe",
+        "Définit une boucle",
+        "Effectue une condition",
+        "Renvoie une valeur"
+      ],
+      correctAnswer: "Valeur nulle ou inexistante"),
 ];
