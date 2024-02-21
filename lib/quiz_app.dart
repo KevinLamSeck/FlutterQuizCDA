@@ -28,7 +28,7 @@ class _QuizAppState extends State<QuizApp> {
   @override
   void initState() {
     super.initState();
-    questions = Questions().getRandomQuestions(numberOfQuestions: 10);
+    questions = Questions().getRandomQuestions(numberOfQuestions: 20);
     currentQuestions = questions;
   }
 
