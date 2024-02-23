@@ -41,7 +41,7 @@ class _QuizAppState extends State<QuizApp> {
   void switchToStartScreen() {
     setState(() {
       selectedAnswers.clear();
-      currentQuestions = Questions().getRandomQuestions(numberOfQuestions: 10);
+      currentQuestions = Questions().getRandomQuestions(numberOfQuestions: 20);
       activeScreen = ScreenState.startScreen;
     });
   }
