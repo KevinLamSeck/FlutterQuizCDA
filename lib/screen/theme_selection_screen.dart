@@ -22,11 +22,12 @@ class _ThemeSelectionScreenState extends State<ThemeSelectionScreen> {
   @override
   void initState() {
     super.initState();
-    // Always use a static list of themes to ensure we have something to display
-    themes = [
-      'React', 'OOP', 'JavaScript', 'Keywords',
-      'Docker', 'Architecture', 'SQL', 'Git'
-    ];
+    themes = widget.availableThemes.isNotEmpty
+        ? widget.availableThemes
+        : [
+            'React', 'OOP', 'JavaScript', 'Keywords',
+            'Docker', 'Architecture', 'SQL', 'Git', 'TypeScript',
+          ];
     print('Themes in ThemeSelectionScreen: $themes');
   }
 
@@ -34,10 +35,10 @@ class _ThemeSelectionScreenState extends State<ThemeSelectionScreen> {
   Widget build(BuildContext context) {
     print('Building ThemeSelectionScreen with themes: $themes');
     return Scaffold(
-      backgroundColor: const Color(0xFF0A0A0A), // Fond noir pour le style shadCN
+      backgroundColor: const Color(0xFF0A0A0A),
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // AppBar sans fond
-        elevation: 0, // Pas d'ombre
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         title: const Text(
           'Select Theme',
           style: TextStyle(
@@ -163,6 +164,8 @@ class ThemeButton extends StatelessWidget {
         return Icons.storage;
       case 'git':
         return Icons.merge_type;
+      case 'typescript':
+        return Icons.developer_mode;
       default:
         return Icons.topic;
     }

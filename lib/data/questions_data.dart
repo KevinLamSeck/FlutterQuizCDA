@@ -6,3 +6,4 @@ export 'questions_keywords.dart';
 export 'questions_oop.dart';
 export 'questions_react.dart';
 export 'questions_sql.dart';
+export 'questions_typescript.dart';

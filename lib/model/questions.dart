@@ -2,7 +2,16 @@ import 'dart:math';
 
 import 'package:flutter_quizz_questions/model/question.dart';
 
-import '../data/questions_data.dart';
+// Import all question files directly
+import '../data/questions_architecture.dart';
+import '../data/questions_docker.dart';
+import '../data/questions_git.dart';
+import '../data/questions_javascript.dart';
+import '../data/questions_keywords.dart';
+import '../data/questions_oop.dart';
+import '../data/questions_react.dart';
+import '../data/questions_sql.dart';
+import '../data/questions_typescript.dart';
 
 class Questions {
   final List<Question> _selectedQuestions = [];
@@ -18,6 +27,7 @@ class Questions {
       'Architecture': questionsArchitecture,
       'SQL': questionsSQL,
       'Git': questionsGit,
+      'TypeScript': questionsTypeScript,
     };
     print('Themes map keys: ${map.keys.toList()}');
     print('Git questions count: ${map['Git']?.length}');
@@ -81,6 +91,7 @@ class Questions {
       ...questionsArchitecture,
       ...questionsSQL,
       ...questionsGit,
+      ...questionsTypeScript,
     ];
 
     var random = Random();

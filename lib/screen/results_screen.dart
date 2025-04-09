@@ -17,7 +17,6 @@ class ResulstsScreen extends StatelessWidget {
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summaryData = [];
 
-    // Loop through questions and answers
     for (var i = 0; i < selectedAnswers.length; i++) {
       final question = questions[i];
       final selectedAnswer = selectedAnswers[i];
@@ -44,7 +43,6 @@ class ResulstsScreen extends StatelessWidget {
         )
         .length;
 
-    // Calcul du pourcentage de réussite
     final percentage = (correctAnswers / questions.length * 100).round();
     final isGoodScore = percentage >= 70;
 
@@ -77,7 +75,6 @@ class ResulstsScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Carte de score
               Container(
                 width: double.infinity,
                 margin: const EdgeInsets.only(bottom: 32.0),
@@ -89,7 +86,6 @@ class ResulstsScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    // Icône de résultat
                     Icon(
                       isGoodScore ? Icons.check_circle_outline : Icons.info_outline,
                       size: 48,

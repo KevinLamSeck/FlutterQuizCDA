@@ -37,12 +37,11 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     final currentQuestion = widget.questions[currentQuestionIndex];
     final totalQuestions = widget.questions.length;
 
-    // Créer les boutons de réponse avec index pour les lettres A, B, C, D...
     final options = currentQuestion.getOptions();
     final answerButtons = List.generate(options.length, (index) {
       return AnswerButton(
         answerText: options[index],
-        index: index, // Passer l'index pour générer la lettre correcte
+        index: index,
         onTap: () {
           onAnsweredQuestion(options[index]);
         },
@@ -50,10 +49,10 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     });
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0A0A0A), // Fond noir pour le style shadCN
+      backgroundColor: const Color(0xFF0A0A0A),
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // AppBar sans fond
-        elevation: 0, // Pas d'ombre
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         title: const Text(
           'Quiz',
           style: TextStyle(

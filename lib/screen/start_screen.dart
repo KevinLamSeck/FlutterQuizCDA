@@ -18,7 +18,6 @@ class StartScreen extends StatelessWidget {
     onSelectThemes();
   }
 
-  // Méthode pour créer un bouton style shadCN
   Widget buildShadCNButton({
     required BuildContext context,
     required String label,
@@ -34,9 +33,9 @@ class StartScreen extends StatelessWidget {
           backgroundColor: MaterialStateProperty.resolveWith<Color>(
             (Set<MaterialState> states) {
               if (states.contains(MaterialState.pressed)) {
-                return const Color(0xFF333333); // Plus foncé quand pressé
+                return const Color(0xFF333333);
               }
-              return const Color(0xFF1A1A1A); // Couleur par défaut
+              return const Color(0xFF1A1A1A);
             },
           ),
           foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
@@ -82,7 +81,6 @@ class StartScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Logo image avec effet de filtre noir et blanc
           ColorFiltered(
             colorFilter: const ColorFilter.matrix([
               0.2126, 0.7152, 0.0722, 0, 0,
@@ -97,7 +95,6 @@ class StartScreen extends StatelessWidget {
           ),
           const SizedBox(height: 32.0),
 
-          // Titre avec style shadCN
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16.0),
             child: const Text(
@@ -115,7 +112,6 @@ class StartScreen extends StatelessWidget {
 
           const SizedBox(height: 48.0),
 
-          // Boutons avec style shadCN
           buildShadCNButton(
             context: context,
             label: 'Start Quiz',
@@ -130,10 +126,9 @@ class StartScreen extends StatelessWidget {
             onPressed: onThemesPressed,
           ),
 
-          // Signature en bas
           const SizedBox(height: 32.0),
           const Text(
-            'CDA Quiz App',
+            'Quiz App',
             style: TextStyle(
               fontSize: 14,
               color: Color(0xFF666666),

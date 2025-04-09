@@ -7,9 +7,8 @@ class QuestionsSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Couleurs pour les réponses correctes et incorrectes dans le style shadCN
-    const correctColor = Color(0xFF66BB6A); // Vert pour les réponses correctes
-    const incorrectColor = Color(0xFFEF5350); // Rouge pour les réponses incorrectes
+    const correctColor = Color(0xFF66BB6A);
+    const incorrectColor = Color(0xFFEF5350);
 
     return ListView.separated(
       padding: const EdgeInsets.all(16.0),

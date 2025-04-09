@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/kevinlamseck/.asdf/installs/flutter/3.29.2-stable/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/kevinlamseck/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/kevinlamseck/code/KevinLamSeck/flutter-workspace/flutter_quizz_questions/android/app/.cxx/RelWithDebInfo/391q6i5a/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/kevinlamseck/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/kevinlamseck/code/KevinLamSeck/flutter-workspace/flutter_quizz_questions/android/app/.cxx/RelWithDebInfo/391q6i5a/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

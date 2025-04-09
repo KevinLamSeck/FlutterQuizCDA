@@ -10,7 +10,7 @@ class AnswerButton extends StatelessWidget {
 
   final String answerText;
   final void Function() onTap;
-  final int index; // Index pour déterminer la lettre (A, B, C, D...)
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class AnswerButton extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      String.fromCharCode(65 + index), // A, B, C, D... basé sur l'index
+                      String.fromCharCode(65 + index),
                       style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
