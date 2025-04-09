@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  final void Function() startQuiz;
+  final void Function() onStartQuiz;
+  final void Function() onSelectThemes;
 
-  const StartScreen(this.startQuiz, {super.key});
+  const StartScreen({
+    required this.onStartQuiz,
+    required this.onSelectThemes,
+    super.key,
+  });
 
-  void onPressed() {
-    startQuiz();
+  void onStartPressed() {
+    onStartQuiz();
+  }
+
+  void onThemesPressed() {
+    onSelectThemes();
   }
 
   @override
@@ -36,24 +45,49 @@ class StartScreen extends StatelessWidget {
         const SizedBox(
           height: 16.0,
         ),
-        // Start button
-        SizedBox(
-          width: MediaQuery.of(context).size.width * 2 / 3,
-          child: TextButton.icon(
-            style: TextButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: Colors.deepPurple,
-              textStyle: const TextStyle(
-                fontSize: 20,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+        // Buttons
+        Column(
+          children: [
+            // Start button
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 2 / 3,
+              child: TextButton.icon(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.deepPurple,
+                  textStyle: const TextStyle(
+                    fontSize: 20,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                onPressed: onStartPressed,
+                icon: const Icon(Icons.play_arrow),
+                label: const Text('Start'),
               ),
             ),
-            onPressed: onPressed,
-            icon: const Icon(Icons.play_arrow),
-            label: const Text('Start'),
-          ),
+            const SizedBox(height: 16.0),
+            // Themes button
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 2 / 3,
+              child: TextButton.icon(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.deepPurple,
+                  textStyle: const TextStyle(
+                    fontSize: 20,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                onPressed: onThemesPressed,
+                icon: const Icon(Icons.category),
+                label: const Text('Thèmes'),
+              ),
+            ),
+          ],
         ),
       ],
     );

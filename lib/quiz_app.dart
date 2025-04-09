@@ -4,6 +4,7 @@ import 'package:flutter_quizz_questions/model/questions.dart';
 import 'package:flutter_quizz_questions/screen/questions_screen.dart';
 import 'package:flutter_quizz_questions/screen/results_screen.dart';
 import 'package:flutter_quizz_questions/screen/start_screen.dart';
+import 'package:flutter_quizz_questions/screen/theme_selection_screen.dart';
 
 class QuizApp extends StatefulWidget {
   const QuizApp({super.key});
@@ -17,12 +18,14 @@ enum ScreenState {
   questionsScreen,
   answersScreen,
   resultsScreen,
+  themeSelectionScreen,
 }
 
 class _QuizAppState extends State<QuizApp> {
   final List<String> selectedAnswers = [];
   List<Question> questions = [];
   List<Question> currentQuestions = [];
+  List<String> availableThemes = [];
   ScreenState activeScreen = ScreenState.startScreen;
 
   @override
@@ -30,10 +33,29 @@ class _QuizAppState extends State<QuizApp> {
     super.initState();
     questions = Questions().getRandomQuestions(numberOfQuestions: 20);
     currentQuestions = questions;
+    availableThemes = Questions().getAvailableThemes();
+    print('Available themes: $availableThemes');
   }
 
   void switchScreen() {
     setState(() {
+      activeScreen = ScreenState.questionsScreen;
+    });
+  }
+
+  void switchToThemeScreen() {
+    setState(() {
+      activeScreen = ScreenState.themeSelectionScreen;
+      print('Switching to theme screen. Available themes: $availableThemes');
+    });
+  }
+
+  void selectTheme(String theme) {
+    print('Selected theme: $theme');
+    final questions = Questions().getQuestionsFromTheme(theme, numberOfQuestions: 10);
+    print('Questions from theme $theme: ${questions.length}');
+    setState(() {
+      currentQuestions = questions;
       activeScreen = ScreenState.questionsScreen;
     });
   }
@@ -57,7 +79,10 @@ class _QuizAppState extends State<QuizApp> {
 
   @override
   Widget build(BuildContext context) {
-    Widget screenWidget = StartScreen(switchScreen);
+    Widget screenWidget = StartScreen(
+      onStartQuiz: switchScreen,
+      onSelectThemes: switchToThemeScreen,
+    );
 
     if (activeScreen == ScreenState.questionsScreen) {
       screenWidget = QuestionsScreen(
@@ -72,6 +97,14 @@ class _QuizAppState extends State<QuizApp> {
         onRestardQuiz: switchToStartScreen,
         questions: currentQuestions,
         selectedAnswers: selectedAnswers,
+      );
+    }
+
+    if (activeScreen == ScreenState.themeSelectionScreen) {
+      screenWidget = ThemeSelectionScreen(
+        onBackToStartScreen: switchToStartScreen,
+        onSelectTheme: selectTheme,
+        availableThemes: availableThemes,
       );
     }
 

@@ -44,24 +44,31 @@ class ResulstsScreen extends StatelessWidget {
         )
         .length;
 
-    return SizedBox(
-      child: Container(
-        margin: const EdgeInsets.all(16.0),
+    return Container(
+      margin: const EdgeInsets.all(16.0),
+      child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Terminé ! Vous avez répondu correctement à $correctAnswers / ${questions.length} questions',
+              'Terminé ! Vous avez répondu correctement à\n$correctAnswers / ${questions.length} questions',
               style: const TextStyle(
-                fontSize: 24,
+                fontSize: 22,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
               textAlign: TextAlign.center,
+              softWrap: true,
+              overflow: TextOverflow.visible,
             ),
             const SizedBox(height: 16),
-            QuestionsSummary(summaryData: summaryData),
+            Container(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.6,
+              ),
+              child: QuestionsSummary(summaryData: summaryData),
+            ),
             const SizedBox(height: 16),
             SizedBox(
               width: MediaQuery.of(context).size.width * 2 / 3,

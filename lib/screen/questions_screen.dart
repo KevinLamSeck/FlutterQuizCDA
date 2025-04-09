@@ -47,23 +47,37 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
       );
     }).toList();
 
-    return SizedBox(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            currentQuestion.text,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-            textAlign: TextAlign.center,
+    return Scaffold(
+      backgroundColor: Colors.transparent, // Keep the background transparent to maintain the app's theme
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
+        title: const Text('Quiz'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.cancel),
+            onPressed: onBackToStartScreen,
+            tooltip: 'Annuler le quiz',
           ),
-          const SizedBox(height: 20),
-          // Answers
-          ...answerButtons
         ],
+      ),
+      body: SizedBox(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              currentQuestion.text,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20),
+            // Answers
+            ...answerButtons
+          ],
+        ),
       ),
     );
   }

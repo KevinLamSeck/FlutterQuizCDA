@@ -18,9 +18,11 @@ class QuestionsSummary extends StatelessWidget {
           final data = summaryData[index];
           final isCorrect = data['is_correct'] as bool;
 
-          return Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
               CircleAvatar(
                 backgroundColor: Colors.purple,
                 child: Text(
@@ -44,6 +46,8 @@ class QuestionsSummary extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
                     ),
                     Text(
                       data['correct_answer'] as String,
@@ -51,6 +55,8 @@ class QuestionsSummary extends StatelessWidget {
                         fontSize: 16,
                         color: darkGreen,
                       ),
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
                     ),
                     Text(
                       data['selected_answer'] as String,
@@ -58,12 +64,15 @@ class QuestionsSummary extends StatelessWidget {
                         fontSize: 16,
                         color: isCorrect ? darkGreen : brightRed,
                       ),
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
                     ),
                     const SizedBox(height: 16)
                   ],
                 ),
               )
             ],
+            ),
           );
         },
       ),
