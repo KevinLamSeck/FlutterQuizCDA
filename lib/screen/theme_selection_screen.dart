@@ -34,43 +34,80 @@ class _ThemeSelectionScreenState extends State<ThemeSelectionScreen> {
   Widget build(BuildContext context) {
     print('Building ThemeSelectionScreen with themes: $themes');
     return Scaffold(
-      backgroundColor: Colors.transparent, // Keep the background transparent to maintain the app's theme
+      backgroundColor: const Color(0xFF0A0A0A), // Fond noir pour le style shadCN
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        title: const Text('Sélection de thème'),
+        backgroundColor: Colors.transparent, // AppBar sans fond
+        elevation: 0, // Pas d'ombre
+        title: const Text(
+          'Select Theme',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFFEEEEEE),
+            letterSpacing: 0.5,
+          ),
+        ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Color(0xFFEEEEEE),
+          ),
           onPressed: widget.onBackToStartScreen,
-          tooltip: 'Retour à l\'accueil',
+          tooltip: 'Back to home',
+          style: ButtonStyle(
+            overlayColor: MaterialStateProperty.all<Color>(
+              Colors.white.withOpacity(0.1),
+            ),
+          ),
+        ),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(1.0),
+          child: Container(
+            color: const Color(0xFF333333),
+            height: 1.0,
+          ),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(24.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
               width: double.infinity,
               child: Text(
-                'Choisissez un thème pour les questions',
+                'Choose a theme for your quiz',
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFFAAAAAA),
+                  letterSpacing: 0.3,
                 ),
                 textAlign: TextAlign.center,
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 32),
             Expanded(
               child: themes.isEmpty
-                  ? const Center(
-                      child: Text(
-                        'Aucun thème disponible',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
+                  ? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.category_outlined,
+                            size: 48,
+                            color: Color(0xFF666666),
+                          ),
+                          const SizedBox(height: 16),
+                          const Text(
+                            'No themes available',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Color(0xFF999999),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
                     )
                   : GridView.builder(
@@ -107,25 +144,70 @@ class ThemeButton extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  // Obtenir une icône basée sur le thème
+  IconData getThemeIcon() {
+    switch (theme.toLowerCase()) {
+      case 'react':
+        return Icons.code;
+      case 'oop':
+        return Icons.category;
+      case 'javascript':
+        return Icons.javascript;
+      case 'keywords':
+        return Icons.key;
+      case 'docker':
+        return Icons.sailing;
+      case 'architecture':
+        return Icons.architecture;
+      case 'sql':
+        return Icons.storage;
+      case 'git':
+        return Icons.merge_type;
+      default:
+        return Icons.topic;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepPurple,
-        foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        padding: const EdgeInsets.all(16),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: const Color(0xFF333333), width: 1),
       ),
-      child: Text(
-        theme,
-        style: const TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
+      child: Material(
+        color: const Color(0xFF1A1A1A),
+        borderRadius: BorderRadius.circular(8),
+        child: InkWell(
+          onTap: onPressed,
+          borderRadius: BorderRadius.circular(8),
+          splashColor: Colors.white.withOpacity(0.05),
+          highlightColor: Colors.white.withOpacity(0.1),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  getThemeIcon(),
+                  color: const Color(0xFFEEEEEE),
+                  size: 24,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  theme,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFFEEEEEE),
+                    letterSpacing: 0.3,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
         ),
-        textAlign: TextAlign.center,
       ),
     );
   }

@@ -34,48 +34,131 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Should have a top bar with a text button icon back
-
     final currentQuestion = widget.questions[currentQuestionIndex];
+    final totalQuestions = widget.questions.length;
 
-    final answerButtons = currentQuestion.getOptions().map((answer) {
+    // Créer les boutons de réponse avec index pour les lettres A, B, C, D...
+    final options = currentQuestion.getOptions();
+    final answerButtons = List.generate(options.length, (index) {
       return AnswerButton(
-        answerText: answer,
+        answerText: options[index],
+        index: index, // Passer l'index pour générer la lettre correcte
         onTap: () {
-          onAnsweredQuestion(answer);
+          onAnsweredQuestion(options[index]);
         },
       );
-    }).toList();
+    });
 
     return Scaffold(
-      backgroundColor: Colors.transparent, // Keep the background transparent to maintain the app's theme
+      backgroundColor: const Color(0xFF0A0A0A), // Fond noir pour le style shadCN
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        title: const Text('Quiz'),
+        backgroundColor: Colors.transparent, // AppBar sans fond
+        elevation: 0, // Pas d'ombre
+        title: const Text(
+          'Quiz',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFFEEEEEE),
+            letterSpacing: 0.5,
+          ),
+        ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.cancel),
+            icon: const Icon(
+              Icons.close_rounded,
+              color: Color(0xFFEEEEEE),
+            ),
             onPressed: onBackToStartScreen,
-            tooltip: 'Annuler le quiz',
+            tooltip: 'Cancel quiz',
+            style: ButtonStyle(
+              overlayColor: MaterialStateProperty.all<Color>(
+                Colors.white.withOpacity(0.1),
+              ),
+            ),
           ),
         ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(1.0),
+          child: Container(
+            color: const Color(0xFF333333),
+            height: 1.0,
+          ),
+        ),
       ),
-      body: SizedBox(
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              currentQuestion.text,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+            // Indicateur de progression
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.only(bottom: 32.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Question ${currentQuestionIndex + 1}/$totalQuestions',
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFFAAAAAA),
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                  // Indicateur de progression
+                  Container(
+                    width: 120,
+                    height: 4,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF333333),
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                    child: FractionallySizedBox(
+                      alignment: Alignment.centerLeft,
+                      widthFactor: (currentQuestionIndex + 1) / totalQuestions,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFEEEEEE),
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 20),
-            // Answers
-            ...answerButtons
+
+            // Question
+            Container(
+              margin: const EdgeInsets.only(bottom: 32.0),
+              padding: const EdgeInsets.all(24.0),
+              decoration: BoxDecoration(
+                color: const Color(0xFF1A1A1A),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: const Color(0xFF333333), width: 1),
+              ),
+              child: Text(
+                currentQuestion.text,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFFEEEEEE),
+                  height: 1.4,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+
+            // Réponses
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: answerButtons,
+                ),
+              ),
+            ),
           ],
         ),
       ),

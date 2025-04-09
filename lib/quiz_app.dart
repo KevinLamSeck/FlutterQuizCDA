@@ -108,17 +108,71 @@ class _QuizAppState extends State<QuizApp> {
       );
     }
 
+    // Définition des couleurs du thème shadCN noir et blanc
+    const primaryColor = Color(0xFF000000); // Noir pur
+    const secondaryColor = Color(0xFFFFFFFF); // Blanc pur
+    const accentColor = Color(0xFF333333); // Gris foncé
+    const backgroundColor = Color(0xFF0A0A0A); // Noir presque pur
+    const surfaceColor = Color(0xFF1A1A1A); // Gris très foncé
+    const textColor = Color(0xFFEEEEEE); // Blanc cassé
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'CDA Quizz',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme(
+          brightness: Brightness.dark,
+          primary: primaryColor,
+          onPrimary: secondaryColor,
+          secondary: accentColor,
+          onSecondary: secondaryColor,
+          error: Colors.red.shade900,
+          onError: secondaryColor,
+          background: backgroundColor,
+          onBackground: textColor,
+          surface: surfaceColor,
+          onSurface: textColor,
+        ),
+        textTheme: const TextTheme(
+          displayLarge: TextStyle(color: textColor, fontWeight: FontWeight.bold),
+          displayMedium: TextStyle(color: textColor, fontWeight: FontWeight.bold),
+          displaySmall: TextStyle(color: textColor, fontWeight: FontWeight.bold),
+          headlineMedium: TextStyle(color: textColor, fontWeight: FontWeight.w600),
+          titleLarge: TextStyle(color: textColor, fontWeight: FontWeight.w600),
+          titleMedium: TextStyle(color: textColor),
+          bodyLarge: TextStyle(color: textColor),
+          bodyMedium: TextStyle(color: textColor),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: surfaceColor,
+            foregroundColor: textColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+              side: const BorderSide(color: accentColor, width: 1),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            elevation: 0,
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            foregroundColor: textColor,
+            backgroundColor: surfaceColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+              side: const BorderSide(color: accentColor, width: 1),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          ),
+        ),
         useMaterial3: true,
       ),
       home: Scaffold(
+        backgroundColor: backgroundColor,
         body: Container(
           decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 18, 18, 18),
+            color: backgroundColor,
           ),
           child: SafeArea(
             minimum: const EdgeInsets.all(16.0),
